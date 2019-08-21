@@ -43,6 +43,8 @@ export const Colors = createGlobalStyle`
 --orange-pink:linear-gradient(to bottom right,var(--orange-light),var(--orange-dark) 85%);
 --green-grad:linear-gradient(to bottom right,var(--green-light),var(--green-dark) 85%);
 
+--primary-color: var(--green);
+
 transition:all .3s ease
 }
 `

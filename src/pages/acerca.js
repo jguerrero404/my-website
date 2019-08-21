@@ -25,17 +25,22 @@ const Me = styled.section`
 
   p {
     font-family: var(--font-head);
-    border-bottom: 2px dashed var(--sidenav-bg);
-    border-top: 2px dashed var(--sidenav-bg);
-    padding: 0.5em;
-    font-size: 17px;
+    border-bottom: var(--h-border);
+    border-top: var(--h-border);
+    padding: var(--gutter-small) 0;
+    font-size: 15px;
+    line-height: 27px;
+    @media (min-width: 768px) {
+      line-height: 36px;
+      font-size: 20px;
+    }
   }
 `
 
 const Info = styled.section`
-  margin-top: 2em;
+  margin-top: var(--gutter-big);
   display: grid;
-  grid-gap: 1rem;
+  grid-gap:  var(--gutter);
   grid-template-columns: repeat(auto-fit, minmax(300px, 399px));
   justify-content: center;
   align-items: center;

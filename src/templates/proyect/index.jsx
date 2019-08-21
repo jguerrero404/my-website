@@ -1,8 +1,10 @@
+// Constructor
 import React from "react"
 import { graphql, Link } from "gatsby"
-
+// Base
 import Layout from "../../layout/index"
-
+import SEO from "../../components/seo"
+// UI
 import Tag from "../../components/tag/index"
 import Btn from "../../components/button/index.styled"
 import { IconGithub } from "../../utils/theme/icons"
@@ -41,6 +43,10 @@ class Proyect extends React.Component {
 
     return (
       <Layout>
+        <SEO
+          title={data.markdownRemark.frontmatter.title}
+          description={data.markdownRemark.frontmatter.description}
+        />
         <Article>
           <Title>{data.markdownRemark.frontmatter.title}</Title>
           <Menu>

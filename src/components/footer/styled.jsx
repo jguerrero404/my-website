@@ -23,9 +23,9 @@ export const FooterContainer = styled.footer`
   }
 `
 export const FooterCreated = styled.div`
-  border-bottom: 2px dashed var(--sidenav-bg);
-  border-top: 2px dashed var(--sidenav-bg);
-  margin: 0.5em 0 1.5em;
+  border-bottom: var(--h-border);
+  border-top: var(--h-border);
+  margin: var(--gutter-small) 0 var(--gutter);
   padding: 10px 0;
 `
 export const FooterIcons = styled.div`

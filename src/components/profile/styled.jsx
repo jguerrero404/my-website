@@ -3,9 +3,9 @@ import styled from "styled-components"
 export const UserImage = styled.div`
   width: 100px;
   height: 100px;
-  background-color: var(--green);
+  background-color: var(--primary-color);
   border-radius: 50%;
-  margin-bottom: 1em;
+  margin-bottom: var(--gutter);
   @media (min-width: 768px) {
   }
 `
@@ -20,7 +20,7 @@ export const UserName = styled.h2`
   }
 
   span {
-    color: var(--green);
+    color: var(--primary-color);
   }
 `
 export const UserPro = styled.h3`

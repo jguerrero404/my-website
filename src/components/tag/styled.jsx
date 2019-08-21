@@ -58,5 +58,5 @@ export const Tag = styled.span`
     font-size: ${({ size }) => (size ? "1.2em" : "0.7em")};
     line-height: ${({ size }) => (size ? "29px" : "17px")};
   }
-  font-family: sans-serif;
+  font-family: var(--font-body);
 `

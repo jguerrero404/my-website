@@ -4,7 +4,7 @@ export const Article = styled.article`
   @media (min-width: 1024px) {
     display: grid;
     grid-template-columns: 4fr 1fr;
-    grid-gap: 0 1em;
+    grid-gap: 0 var(--gutter);
     grid-template-rows: 2;
   }
 `
@@ -14,10 +14,10 @@ export const Title = styled.h1`
   width: 100%;
   grid-column: 1 / 3;
   line-height: 54px;
-  margin: 49.8px 0;
-  font-size: 35px;
+  margin: var(--gutter-big) 0;
+  font-size: 30px;
   text-align: center;
-  padding-bottom: 0.5em;
+  padding-bottom: var(--gutter-small);
   border-bottom: var(--h-border);
   color: var(--h-color);
 
@@ -36,12 +36,12 @@ export const Title = styled.h1`
 `
 
 export const Content = styled.section`
-  margin: 1rem 0.25em;
+  margin: var(--gutter) 0;
 
   @media (min-width: 1024px) {
     grid-column: 1 / 2;
     grid-row: 2;
-    padding-left: 2em;
+    padding-left: var(--gutter-big);
     margin: 0;
   }
 `
@@ -60,8 +60,8 @@ export const Info = styled.div`
   box-shadow: var(--card-shadow);
   min-height: 150px;
   margin: 0 auto;
-  padding: 1em;
-  margin-bottom: 2em;
+  padding: var(--gutter);
+  margin-bottom: var(--gutter-big);
   position: relative;
 
   @media (min-width: 768px) {
@@ -71,7 +71,7 @@ export const Info = styled.div`
 export const Description = styled.div`
   line-height: 24.83px;
   font-size: 13.8px;
-  margin-top: 40px;
+  margin-top: calc(30px + var(--gutter));
   @media (min-width: 768px) {
     margin: 0;
     line-height: 33.1167px;
@@ -94,7 +94,7 @@ export const Buttons = styled.div`
   align-items: center;
   position: absolute;
   top: 0;
-  margin-top: 20px;
+  margin-top: var(--gutter);
   @media (min-width: 768px) {
     position: static;
     margin: 0;
@@ -110,7 +110,7 @@ export const Buttons = styled.div`
   }
 
   button:first-child {
-    margin-right: 0.5em;
+    margin-right: var(--gutter-small);
     background-color: var(--gray-2);
     color: #000;
     display: flex;
@@ -142,7 +142,7 @@ export const Author = styled.div`
   justify-content: left;
   align-items: center;
   font-weight: 700;
-  margin: 20px 0;
+  margin: var(--gutter) 0;
   color: #fff;
   line-height: 17px;
   font-size: 13.8px;
@@ -155,9 +155,9 @@ export const Author = styled.div`
     width: 48px;
     height: 48px;
     border-radius: 50%;
-    margin-right: 0.5em;
+    margin-right: var(--gutter-small);
     box-shadow: var(--sidenav-shadow);
-    background-color: var(--green);
+    background-color: var(--primary-color);
   }
 `
 export const Body = styled.div`
@@ -202,7 +202,8 @@ export const Body = styled.div`
     font-size: 0.9em;
     color: var(--h-color);
   }
-  p a {
+  p a,
+  li a {
     color: var(--h-color);
     font-weight: 600;
     box-shadow: inset 0 -3px 0 #b4e7f8;
@@ -229,9 +230,8 @@ export const Menu = styled.aside`
   }
   nav {
     max-height: 80vh;
-    margin-bottom: 1em;
-    padding: 1em;
-    margin: 0 0.25em;
+    margin-bottom: var(--gutter);
+    padding: var(--gutter);
     overflow-y: auto;
     box-shadow: var(--toc-shadow);
     background: var(--sidenav-bg);
@@ -255,7 +255,7 @@ export const Menu = styled.aside`
     margin: 0;
   }
   nav ul li {
-    padding: 0.5em;
+    padding: var(--gutter-small);
     border-bottom: 1px solid var(--gray-dark);
     line-height: 18px;
     font-size: 15px;

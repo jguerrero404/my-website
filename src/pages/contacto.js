@@ -15,11 +15,11 @@ const Container = styled.section`
   }
 
   form {
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--gutter-small);
 
     input,
     textarea {
-      margin-bottom: 0.5rem;
+      margin-bottom: var(--gutter-small);
       @media (min-width: 512px) {
         margin-bottom: 0;
       }
@@ -29,7 +29,7 @@ const Container = styled.section`
       display: grid;
       grid-column: 1fr;
       grid-template-columns: 1fr 1fr;
-      grid-gap: 0.5rem;
+      grid-gap: var(--gutter-small);
 
       input:first-child {
         grid-column: 1/2;

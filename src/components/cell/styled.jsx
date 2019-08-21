@@ -3,9 +3,9 @@ import styled from "styled-components"
 export const CellGroup = styled.div`
   display: grid;
   grid-template-columns: 60px 1fr;
-  grid-gap: 25px;
+  grid-gap: var(--gutter);
   align-items: center;
-  margin: 0 1em;
+  margin: 0 var(--gutter);
   @media (min-width: 768px) {
     margin: 0;
   }

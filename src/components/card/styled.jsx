@@ -5,10 +5,10 @@ export const CardGroup = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 1rem;
+  grid-gap: var(--gutter);
   @media (min-width: 500px) {
     grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
-    grid-gap: 2rem;
+    grid-gap: var(--gutter-big);
   }
   justify-content: center;
 `
@@ -38,7 +38,7 @@ export const CardContainer = styled.div`
 `
 
 export const CardContent = styled.div`
-  padding: 0 1em;
+  padding: 0 var(--gutter);
   display: flex;
   flex-direction: column;
 `
@@ -47,7 +47,7 @@ export const CardFooter = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 0 1em 1em;
+  margin: 0 var(--gutter) var(--gutter);
 `
 
 export const CardTitle = styled.h3`
@@ -66,7 +66,7 @@ export const CardTitle = styled.h3`
 
 export const CardText = styled.p`
   line-height: 24px;
-  margin-bottom: 1em;
+  margin-bottom: var(--gutter);
   font-family: sans-serif;
   font-size: 15px;
   line-height: 20px;

@@ -30,7 +30,7 @@ export const MenuItem = styled.li`
   justify-content: center;
   align-items: center;
   margin: 0;
-  box-shadow: 1.5px 0 5px -5px #010101;
+  box-shadow: var(--sidenav-shadow);
 
   @media (min-width: 768px) {
     margin-bottom: 10px;
@@ -42,7 +42,7 @@ export const MenuItem = styled.li`
     display: none;
   }
   .active > svg {
-    fill: var(--green);
+    fill: var(--primary-color);
   }
 `
 
@@ -89,7 +89,7 @@ export const MenuLink = styled(Link)`
 
   @media (min-width: 768px) {
     &:hover > svg {
-      fill: var(--green);
+      fill: var(--primary-color);
     }
   }
 `

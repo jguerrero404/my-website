@@ -38,9 +38,6 @@ export const Nav = styled.nav`
   }
 `
 export const Main = styled.main`
-  padding: .5em;
-  @media (min-width: 768px) {
-    padding: 1em;
-  }
+  padding: var(--gutter);
   overflow-y: auto;
 `

@@ -52,7 +52,7 @@ const Container = styled.section`
 const Title = styled.div`
   width: 100%;
   flex-direction: column;
-  margin-left: 2rem;
+  margin-left: var(--gutter-big);
   h1,
   strong {
     font-family: var(--font-head);
@@ -65,7 +65,7 @@ const Logo = styled.div`
   svg {
     height: 100%;
     width: 100%;
-    fill: var(--green);
+    fill: var(--primary-color);
   }
 `
 
@@ -74,6 +74,6 @@ const Buttons = styled.section`
   display: flex;
   justify-content: flex-start;
   button:first-child {
-    margin-right: 1em;
+    margin-right: var(--gutter);
   }
 `
