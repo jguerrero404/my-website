@@ -19,23 +19,17 @@ const PortfolioPage = () => {
   */
   const data = useStaticQuery(graphql`
     query {
-      allMarkdownRemark {
+      allContentfulProyects(sort: { fields: publishedDate, order: DESC }) {
         edges {
           node {
-            frontmatter {
-              title
-              description
-              tags
-              image {
-                childImageSharp {
-                  fluid(maxWidth: 500) {
-                    ...GatsbyImageSharpFluid
-                  }
-                }
+            title
+            description
+            slug
+            tags
+            image {
+              fluid {
+                ...GatsbyContentfulFluid
               }
-            }
-            fields {
-              slug
             }
           }
         }
@@ -43,7 +37,7 @@ const PortfolioPage = () => {
     }
   `)
   // Array de los proyectos
-  const proyects = data.allMarkdownRemark.edges
+  const proyects = data.allContentfulProyects.edges
   return (
     <Layout title="Portafolio">
       <SEO title="Portafolio" />
@@ -52,12 +46,12 @@ const PortfolioPage = () => {
           // Creacion del proyecto
           return (
             <Card
-              image={proyect.node.frontmatter.image.childImageSharp.fluid}
-              title={proyect.node.frontmatter.title}
-              url={"/portafolio/" + proyect.node.fields.slug}
-              text={proyect.node.frontmatter.description}
-              tag={proyect.node.frontmatter.tags}
-              key={proyect.node.fields.slug}
+              image={proyect.node.image.fluid}
+              title={proyect.node.title}
+              url={"/portafolio/" + proyect.node.slug}
+              text={proyect.node.description}
+              tag={proyect.node.tags.split(",")}
+              key={proyect.node.slug}
             ></Card>
           )
         })}

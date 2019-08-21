@@ -1,6 +1,7 @@
 // Constructor
 import React from "react"
 import { graphql, Link } from "gatsby"
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 // Base
 import Layout from "../../layout/index"
 import SEO from "../../components/seo"
@@ -21,90 +22,46 @@ import {
   Tags,
   Author,
   Body,
-  // Menu,
 } from "./styled"
 
 export const query = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      frontmatter {
-        title
-        description
-        tags
+    contentfulProyects(slug: { eq: $slug }) {
+      title
+      description
+      tags
+      body {
+        json
       }
-      html
     }
   }
 `
-
 class Proyect extends React.Component {
   render() {
     const { data } = this.props
-
+    const options = {
+      renderNode: {
+        "embedded-asset-block": node => {
+          const alt = node.data.target.fields.title["en-US"]
+          const url = node.data.target.fields.file["en-US"].url
+          return <img alt={alt} url={url} />
+        },
+      },
+    }
     return (
       <Layout>
         <SEO
-          title={data.markdownRemark.frontmatter.title}
-          description={data.markdownRemark.frontmatter.description}
+          title={data.contentfulProyects.title}
+          description={data.contentfulProyects.description}
         />
         <Article>
-          <Title>{data.markdownRemark.frontmatter.title}</Title>
-          {/* <Menu>
-            <nav>
-              <ul>
-                <li>
-                  <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md">
-                    Title
-                  </a>
-                  <ul>
-                    <li>
-                      <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md">
-                        sub-title
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md">
-                        sub-title
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md">
-                        sub-title
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md">
-                    Title
-                  </a>
-                  <ul>
-                    <li>
-                      <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md">
-                        sub-title
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md">
-                        sub-title
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md">
-                        sub-title
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </nav>
-          </Menu> */}
+          <Title>{data.contentfulProyects.title}</Title>
           <Content>
             <header>
               <Video>Video Aqui</Video>
               <Info>
                 <Description>
-                  <p>{data.markdownRemark.frontmatter.description}</p>
+                  <p>{data.contentfulProyects.description}</p>
                   <Author>
                     {" "}
                     <div className="avatar"></div>
@@ -126,8 +83,8 @@ class Proyect extends React.Component {
                     </Btn>
                   </Buttons>
                   <Tags>
-                    {data.markdownRemark.frontmatter.tags.map(tag => (
-                      <Tag name={tag} key={"tagProyect" + tag}>
+                    {data.contentfulProyects.tags.split(",").map((tag, i) => (
+                      <Tag name={tag} key={tag + i}>
                         #{tag}
                       </Tag>
                     ))}
@@ -135,9 +92,12 @@ class Proyect extends React.Component {
                 </Details>
               </Info>
             </header>
-            <Body
-              dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-            ></Body>
+            <Body>
+              {documentToReactComponents(
+                data.contentfulProyects.body.json,
+                options
+              )}
+            </Body>
           </Content>
         </Article>
       </Layout>
