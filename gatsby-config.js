@@ -1,8 +1,14 @@
 module.exports = {
   siteMetadata: {
     title: `José Guerrero`,
-    description: `Descroptcion de my sitio web.`,
-    author: `@jguerrero404`,
+    description: `Este es mi sitio web personal`,
+    author: `José Guerrero`,
+    social: {
+      twitter: "https://twitter.com/jguerrero404",
+      github: "https://github.com/jguerrero404",
+      facebook: "https://facebook.com/jguerrero404",
+      slack: "https://slack.com/jguerrero404",
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
