@@ -15,7 +15,7 @@ module.exports.onCreateNode = ({ node, actions }) => {
 
 module.exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
-  const proyectTemplate = path.resolve("./src/templates/proyect/index.jsx")
+  const proyectTemplate = path.resolve("./src/templates/proyect/index.js")
 
   const res = await graphql(`
     query {
