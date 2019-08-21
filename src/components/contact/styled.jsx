@@ -5,14 +5,18 @@ export const GlobalStyle = createGlobalStyle`
   textarea {
     width: 100%;
     border: none;
-    padding: 1em 2em;
+    font-size: 18px;
+    padding: .5em 1em;
+    line-height: 22px;
     text-decoration: none;
     font-family: var(--font-body);
     font-weight: 700;
     border-radius: 3px;
-    font-size: 15px;
-    line-height: 20px;
     background-color: var(--sidenav-bg);
+    color: var(--text-color);
+    @media (min-width: 512px) {
+      padding: 1em 2em;  
+    }
   }
 
   textarea {

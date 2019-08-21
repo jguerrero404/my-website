@@ -21,7 +21,6 @@ export const CardWrapper = styled.article`
 
 export const CardContainer = styled.div`
   min-height: 240px;
-  height: fit-content;
   background-color: var(--card-bg);
   color: var(--text-color);
   padding: 0;
