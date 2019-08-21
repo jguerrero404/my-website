@@ -69,24 +69,6 @@ export default class ContactPage extends Component {
     this.setState({ formErrors })
   }
 
-  // handleFocus = e => {
-  //   const { name } = e.target
-  //   let formErrors = this.state.formErrors
-
-  //   switch (name) {
-  //     case "name":
-  //       formErrors.name = ""
-  //       break
-  //     case "email":
-  //       formErrors.email = ""
-  //       break
-  //     default:
-  //       formErrors.message = ""
-  //       break
-  //   }
-  //   this.setState({ formErrors })
-  // }
-
   handleSubmit = e => {
     e.preventDefault()
     const state = this.state
@@ -140,12 +122,11 @@ export default class ContactPage extends Component {
               )}
               <input
                 name="name"
-                noValidate
+                className={formErrors.name.length > 0 ? "error" : null}
                 type="text"
                 placeholder="NOMBRE"
                 onChange={this.handleChange}
                 onBlur={this.handleBlur}
-                // onFocus={this.handleFocus}
                 value={this.state.name}
               />
             </div>
@@ -162,12 +143,11 @@ export default class ContactPage extends Component {
               )}
               <input
                 name="email"
-                noValidate
+                className={formErrors.email.length > 0 ? "error" : null}
                 type="email"
                 placeholder="CORREO"
                 onChange={this.handleChange}
                 onBlur={this.handleBlur}
-                // onFocus={this.handleFocus}
                 value={this.state.email}
               />
             </div>
@@ -184,11 +164,10 @@ export default class ContactPage extends Component {
               )}
               <textarea
                 name="message"
-                noValidate
+                className={formErrors.message.length > 0 ? "error" : null}
                 placeholder="MENSAJE"
                 onChange={this.handleChange}
                 onBlur={this.handleBlur}
-                // onFocus={this.handleFocus}
                 value={this.state.message}
               ></textarea>
             </div>

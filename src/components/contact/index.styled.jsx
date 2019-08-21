@@ -18,25 +18,30 @@ export const Container = styled.section`
 
     @media (min-width: 1024px) {
       display: grid;
-      grid-column: 1fr;
       grid-template-columns: 1fr 1fr;
       grid-gap: var(--gutter-small);
+      grid-template-areas:
+        "name email"
+        "message message"
+        "btn btn";
 
       div:first-child {
-        grid-column: 1/2;
+        grid-area: "name";
       }
       div:nth-child(2) {
-        grid-column: 2/3;
+        grid-area: "email";
       }
       div:nth-child(3),
       button {
-        grid-column: 1/3;
-        width: 100%;
+        grid-column: 1 / 3;
       }
     }
   }
 `
 export const GlobalStyle = createGlobalStyle`
+  .error {
+    border: 1px solid var(--red-dark);
+  }
   input,
   textarea {
     width: 100%;
@@ -47,29 +52,17 @@ export const GlobalStyle = createGlobalStyle`
     font-family: var(--font-body);
     font-weight: 700;
     border-radius: 3px;
+    border: none;
     background-color: var(--sidenav-bg);
     color: var(--text-color);
+    &:invalid {
+      box-shadow: none;
+    }
     @media (min-width: 512px) {
       padding: 1em 2em;  
     }
-    
-    &:invalid {
-      box-shadow: none;
-
-      &:hover {
-        
-        &::before {
-          display: none;
-        }
-        &::after {
-          display: none;
-        }
-      }
-    }
-    &:required {
-      box-shadow: none;
-    }
   }
+  
 
   textarea {
     max-width: 100%;
@@ -79,7 +72,7 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 200px;
     @media (min-width: 1024px) {
       max-height: 300px;
-    min-height: 300px;
+      min-height: 300px;
     }
   }
   .form-group {
