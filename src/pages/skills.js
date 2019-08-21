@@ -48,7 +48,7 @@ const SkillsPAge = () => (
     <MyContainer>
       <SEO title="Skills y Experiencia" />
       {mySkills.map(skill => (
-        <Tag size name={skill} key={"skill" + skill}>
+        <Tag size="lg" name={skill} key={"skill" + skill}>
           #{skill}
         </Tag>
       ))}

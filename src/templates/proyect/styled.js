@@ -56,8 +56,8 @@ export const Video = styled.div`
   align-items: center;
 `
 export const Info = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   background-color: var(--sidenav-bg);
   box-shadow: var(--card-shadow);
   min-height: 150px;
@@ -67,7 +67,7 @@ export const Info = styled.div`
   position: relative;
 
   @media (min-width: 768px) {
-    flex-direction: row;
+    grid-template-columns: repeat(2, 1fr);
   }
 `
 export const Description = styled.div`
