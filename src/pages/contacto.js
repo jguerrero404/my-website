@@ -7,194 +7,189 @@ import SEO from "../components/seo"
 import Btn from "../components/button/index.styled"
 import { GlobalStyle, Container } from "../components/contact/index.styled"
 import Tag from "../components/tag/index"
-import { IconWarning, IconQuestion, IconCorrect } from "../utils/theme/icons"
+import { IconQuestion } from "../utils/theme/icons"
 
 const initialState = {
   name: "",
   email: "",
   message: "",
-  nameErr: "",
-  emailErr: "",
-  messageErr: "",
-  nameCorr: false,
-  emailCorr: false,
-  messageCorr: false,
+  formErrors: {
+    name: "",
+    email: "",
+    message: "",
+  },
 }
+
+const emailRegex = RegExp(
+  /^[a-zA-Z0-9.!#$%&´*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+)
+
 export default class ContactPage extends Component {
   state = initialState
 
+  formValid = () => {
+    let valid = true
+    const { formErrors, ...rest } = this.state
+
+    Object.values(formErrors).forEach(element => {
+      element.length > 0 && (valid = false)
+    })
+
+    Object.values(rest).forEach(element => {
+      element === "" && (valid = false)
+    })
+
+    return valid
+  }
+
   handleChange = e => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    })
+    const { name, value } = e.target
+    this.setState({ [name]: value })
   }
 
-  handleFocus = e => {
-    this.setState({
-      [`${e.target.name}Err`]: "",
-      [`${e.target.name}Corr`]: false,
-    })
-    e.target.style.border = "none"
+  handleBlur = e => {
+    const { name, value } = e.target
+    let formErrors = this.state.formErrors
+
+    switch (name) {
+      case "name":
+        formErrors.name =
+          value.length < 3 ? "Minimo 3 caracteres son requeridos" : ""
+
+        break
+      case "email":
+        formErrors.email = emailRegex.test(value) ? "" : "Correo invalido"
+        break
+      default:
+        formErrors.message =
+          value.length < 3 ? "Minimo 3 caracteres son requeridos" : ""
+        break
+    }
+
+    this.setState({ formErrors })
   }
 
-  // handleInvalid = yolo => {
-  //   yolo.style.border = "1px solid var(--red-dark)"
+  // handleFocus = e => {
+  //   const { name } = e.target
+  //   let formErrors = this.state.formErrors
+
+  //   switch (name) {
+  //     case "name":
+  //       formErrors.name = ""
+  //       break
+  //     case "email":
+  //       formErrors.email = ""
+  //       break
+  //     default:
+  //       formErrors.message = ""
+  //       break
+  //   }
+  //   this.setState({ formErrors })
   // }
-
-  validateName = () => {
-    const borderInvalid = document.querySelector("#name")
-
-    if (!this.state.name) {
-      this.setState({
-        nameErr: "Por favor, escribe tú nombre",
-        nameCorr: false,
-      })
-      this.handleInvalid(borderInvalid)
-      return false
-    } else {
-      this.setState({ nameErr: "", nameCorr: true })
-    }
-    return true
-  }
-  validateEmail = () => {
-    const borderInvalid = document.querySelector("#eamil")
-
-    if (!this.state.email) {
-      this.setState({
-        emailErr: "Por favor, escribe tú email",
-        emailCorr: false,
-      })
-      this.handleInvalid(borderInvalid)
-      return false
-    } else if (!this.state.email.includes("@")) {
-      this.setState({ emailErr: "Correo invalido", emailCorr: false })
-      this.handleInvalid(borderInvalid)
-      return false
-    } else {
-      this.setState({ emailErr: "", emailCorr: true })
-    }
-    return true
-  }
-  validateMessage = () => {
-    const borderInvalid = document.querySelector("#message")
-
-    if (!this.state.message) {
-      this.setState({
-        messageErr: "Por favor, escribe un mensaje",
-        messageCorr: false,
-      })
-      this.handleInvalid(borderInvalid)
-      return false
-    } else {
-      this.setState({ messageErr: "", messageCorr: true })
-    }
-    return true
-  }
 
   handleSubmit = e => {
     e.preventDefault()
-    const nameIsValid = this.validateName()
-    const emailIsValid = this.validateEmail()
-    const messageIsValid = this.validateMessage()
+    const state = this.state
+    let formErrors = this.state.formErrors
 
-    if (nameIsValid && emailIsValid && messageIsValid) {
-      console.log(this.state)
+    if (this.formValid()) {
+      console.log(state)
       this.setState(initialState)
+    } else {
+      const nameErr = "Por favor, dime tú nombre"
+      const emailErr = "Por favor, dime tú correo"
+      const messageErr = "Por favor, dime tú mensaje"
+
+      if (this.state === initialState) {
+        formErrors.name = nameErr
+        formErrors.email = emailErr
+        formErrors.message = messageErr
+
+        this.setState({ formErrors })
+      } else {
+        if (state.name === "") {
+          formErrors.name = nameErr
+        }
+        if (state.email === "") {
+          formErrors.email = emailErr
+        }
+        if (state.message === "") {
+          formErrors.message = messageErr
+        }
+        this.setState({ formErrors })
+      }
     }
   }
 
   render() {
+    const { formErrors } = this.state
     return (
       <Layout title="Contacto">
         <SEO title="Contacto" />
         <Container>
           <GlobalStyle />
           <form onSubmit={this.handleSubmit}>
-            <div className="inputContainer">
-              {this.state.nameCorr ? (
-                <div className="message-error">
-                  <Tag name="correct">
-                    <IconCorrect />
-                  </Tag>
-                  <Tag name="correct">Todo Correcto</Tag>
-                </div>
-              ) : null}
-              {this.state.nameErr ? (
+            <div className="form-group">
+              {formErrors.name.length > 0 && (
                 <div className="message-error">
                   <Tag name="error">
                     <IconQuestion />
                   </Tag>
-                  <Tag name="error">{this.state.nameErr}</Tag>
+                  <Tag name="error">{formErrors.name}</Tag>
                 </div>
-              ) : null}
+              )}
               <input
-                id="name"
                 name="name"
+                noValidate
                 type="text"
                 placeholder="NOMBRE"
                 onChange={this.handleChange}
-                onBlur={this.validateName}
-                onFocus={this.handleFocus}
+                onBlur={this.handleBlur}
+                // onFocus={this.handleFocus}
                 value={this.state.name}
               />
             </div>
-            <div className="inputContainer">
-              {this.state.emailCorr ? (
-                <div className="message-error">
-                  <Tag name="correct">
-                    <IconCorrect />
-                  </Tag>
-                  <Tag name="correct">Todo Correcto</Tag>
-                </div>
-              ) : null}
-              {this.state.emailErr ? (
-                <div className="message-error">
-                  <Tag name="error">
-                    {this.state.emailErr === "Correo invalido" ? (
-                      <IconWarning />
-                    ) : (
-                      <IconQuestion />
-                    )}
-                  </Tag>
-                  <Tag name="error">{this.state.emailErr}</Tag>
-                </div>
-              ) : null}
-              <input
-                id="email"
-                name="email"
-                type="email"
-                onBlur={this.validateEmail}
-                placeholder="CORREO"
-                onChange={this.handleChange}
-                value={this.state.email}
-                onFocus={this.handleFocus}
-              />
-            </div>
-            <div className="inputContainer">
-              {this.state.messageCorr ? (
-                <div className="message-error">
-                  <Tag name="correct">
-                    <IconCorrect />
-                  </Tag>
-                  <Tag name="correct">Todo Correcto</Tag>
-                </div>
-              ) : null}
-              {this.state.messageErr ? (
+            <div className="form-group">
+              {formErrors.email.length > 0 ? (
                 <div className="message-error">
                   <Tag name="error">
                     <IconQuestion />
                   </Tag>
-                  <Tag name="error">{this.state.messageErr}</Tag>
+                  <Tag name="error">{formErrors.email}</Tag>
                 </div>
-              ) : null}
+              ) : (
+                ""
+              )}
+              <input
+                name="email"
+                noValidate
+                type="email"
+                placeholder="CORREO"
+                onChange={this.handleChange}
+                onBlur={this.handleBlur}
+                // onFocus={this.handleFocus}
+                value={this.state.email}
+              />
+            </div>
+            <div className="form-group">
+              {formErrors.message.length > 0 ? (
+                <div className="message-error">
+                  <Tag name="error">
+                    <IconQuestion />
+                  </Tag>
+                  <Tag name="error">{formErrors.message}</Tag>
+                </div>
+              ) : (
+                ""
+              )}
               <textarea
-                id="message"
                 name="message"
+                noValidate
                 placeholder="MENSAJE"
                 onChange={this.handleChange}
-                onBlur={this.validateMessage}
+                onBlur={this.handleBlur}
+                // onFocus={this.handleFocus}
                 value={this.state.message}
-                onFocus={this.handleFocus}
               ></textarea>
             </div>
             <Btn width="100%" background="var(--primary-color)" color="#fff">

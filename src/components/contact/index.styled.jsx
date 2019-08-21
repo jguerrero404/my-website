@@ -82,7 +82,7 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 300px;
     }
   }
-  .inputContainer {
+  .form-group {
     position: relative;
   }
   .message-error {
