@@ -11,7 +11,7 @@ import { Link } from "gatsby"
 
 const IndexPage = () => (
   <Layout footer="quitalo">
-    <SEO title="José Guerrero" />
+    <SEO title="Inicio" />
     <Container>
       <Title>
         <h1>
