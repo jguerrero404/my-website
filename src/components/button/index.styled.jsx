@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 const Button = styled.button`
   width: ${({ width }) => width};
-  border: none;
+  border:  ${({ ghost }) => (ghost ? "1px solid var(--green)" : "none")};
   padding: 1em 2em;
   text-decoration: none;
   text-align: center;
@@ -11,17 +11,20 @@ const Button = styled.button`
   font-weight: 700;
   border-radius: 3px;
   cursor: pointer;
-  background-color: var(--green);
-  color: #fff;
+  background-color: ${({ ghost }) => (ghost ? "transparent" : "var(--green)")};
+  color: ${({ ghost }) => (ghost ? "var(--green)" : "#fff")};
   display: block;
   line-height: 15px;
   font-size: 0.625em;
 
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--card-shadow);
-    transition: transform 0.2s ease;
+  @media (min-width: 768px) {
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--card-shadow);
+      transition: transform 0.2s ease;
+    }
   }
+
   &:active {
     transform: scale(0.9);
   }

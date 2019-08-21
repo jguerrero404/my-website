@@ -16,7 +16,7 @@ import Footer from "../components/footer/index"
 import Menu from "../components/nav/index"
 import { IconLogo } from "../utils/theme/icons"
 
-const Layout = ({ children, title, textAlign }) => {
+const Layout = ({ children, title, textAlign, footer }) => {
   return (
     <>
       <Reboot />
@@ -25,13 +25,13 @@ const Layout = ({ children, title, textAlign }) => {
       <VariableStyle />
 
       <Nav role="navigation">
+        <IconLogo />
         <Menu />
       </Nav>
       <Main role="main">
-        <IconLogo />
         {title ? <Header siteTitle={title} textAlign={textAlign} /> : undefined}
         {children}
-        <Footer />
+        {footer === undefined ? <Footer /> : undefined}
       </Main>
     </>
   )

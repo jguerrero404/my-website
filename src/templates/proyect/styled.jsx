@@ -1,18 +1,21 @@
 import styled from "styled-components"
 
 export const Article = styled.article`
-  display: grid;
-  grid-template-columns: 4fr 1fr;
-  grid-gap: 2em;
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-gap: 0 1em;
+    grid-template-rows: 2;
+  }
 `
 
 export const Title = styled.h1`
   display: block;
   width: 100%;
   grid-column: 1 / 3;
-  line-height: 72px;
+  line-height: 54px;
   margin: 49.8px 0;
-  font-size: 3em;
+  font-size: 35px;
   text-align: center;
   padding-bottom: 0.5em;
   border-bottom: var(--h-border);
@@ -21,15 +24,30 @@ export const Title = styled.h1`
   font-family: var(--font-head);
   font-weight: 800;
   font-style: normal;
+
+  @media (min-width: 768px) {
+    line-height: 72px;
+    font-size: 3em;
+  }
+  @media (min-width: 1024px) {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
 `
 
 export const Content = styled.section`
-  grid-column: 1 / 2;
-  padding-left: 2em;
+  margin: 1rem 0.25em;
+
+  @media (min-width: 1024px) {
+    grid-column: 1 / 2;
+    grid-row: 2;
+    padding-left: 2em;
+    margin: 0;
+  }
 `
 export const Video = styled.div`
   width: 100%;
-  height: 550px;
+  height: 200px;
   background-color: black;
   display: flex;
   justify-content: center;
@@ -37,26 +55,59 @@ export const Video = styled.div`
 `
 export const Info = styled.div`
   display: flex;
+  flex-direction: column;
   background-color: var(--sidenav-bg);
   box-shadow: var(--card-shadow);
   min-height: 150px;
   margin: 0 auto;
   padding: 1em;
   margin-bottom: 2em;
+  position: relative;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `
 export const Description = styled.div`
-  width: 50%;
+  line-height: 24.83px;
+  font-size: 13.8px;
+  margin-top: 40px;
+  @media (min-width: 768px) {
+    margin: 0;
+    line-height: 33.1167px;
+    font-size: 18.4px;
+  }
+
+  p {
+    margin: 0;
+  }
 `
 export const Details = styled.div`
-  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
 `
 export const Buttons = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: absolute;
+  top: 0;
+  margin-top: 20px;
+  @media (min-width: 768px) {
+    position: static;
+    margin: 0;
+  }
+
+  button {
+    line-height: 12px;
+    font-size: 9.38px;
+    @media (min-width: 768px) {
+      line-height: 15px;
+      font-size: 12.5px;
+    }
+  }
 
   button:first-child {
     margin-right: 0.5em;
@@ -77,9 +128,14 @@ export const Buttons = styled.div`
 `
 export const Tags = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    justify-content: flex-end;
+  }
 `
 export const Author = styled.div`
   display: flex;
@@ -88,6 +144,12 @@ export const Author = styled.div`
   font-weight: 700;
   margin: 20px 0;
   color: #fff;
+  line-height: 17px;
+  font-size: 13.8px;
+  @media (min-width: 768px) {
+    font-size: 18.4px;
+    line-height: 23px;
+  }
 
   .avatar {
     width: 48px;
@@ -99,23 +161,39 @@ export const Author = styled.div`
   }
 `
 export const Body = styled.div`
+  line-height: 27px;
+  font-size: 15px;
+  @media (min-width: 768px) {
+    line-height: 36px;
+    font-size: 20px;
+  }
   h2 {
     border-bottom: var(--h-border);
     padding-bottom: 0.7em;
     color: var(--h-color);
+    font-size: 22.5px;
+    line-height: 27px;
+    @media (min-width: 768px) {
+      font-size: 30px;
+      line-height: 36px;
+    }
   }
 
   h3 {
     color: var(--text-color);
+    line-height: 22px;
+    font-size: 17.55px;
+    @media (min-width: 768px) {
+      line-height: 28px;
+      font-size: 23.4px;
+    }
   }
 
   ol,
   ul {
     font-weight: 500;
   }
-  p {
-    line-height: 1.8;
-  }
+
   em {
     font-weight: 700;
   }
@@ -136,18 +214,24 @@ export const Body = styled.div`
 `
 
 export const Menu = styled.aside`
-  grid-column: 2 / 3;
-  
+  @media (min-width: 1024px) {
+    grid-column: 2 / 3;
+    grid-row: 2;
+  }
+
   &,
   nav {
-    position: sticky;
-    top: 0;
+    position: static;
+    @media (min-width: 1024px) {
+      position: sticky;
+      top: 0;
+    }
   }
   nav {
-    
     max-height: 80vh;
     margin-bottom: 1em;
-    padding: 1em 0.5em 0;
+    padding: 1em;
+    margin: 0 0.25em;
     overflow-y: auto;
     box-shadow: var(--toc-shadow);
     background: var(--sidenav-bg);
@@ -173,7 +257,12 @@ export const Menu = styled.aside`
   nav ul li {
     padding: 0.5em;
     border-bottom: 1px solid var(--gray-dark);
-    line-height: 24px;
+    line-height: 18px;
+    font-size: 15px;
+    @media (min-width: 768px) {
+      line-height: 24px;
+      font-size: 20px;
+    }
   }
   nav ul li a {
     color: var(--blue);

@@ -11,6 +11,7 @@ const mySkills = [
   "html",
   "javascript",
   "css",
+  "responsive-desing",
   "react",
   "animation",
   "auth",

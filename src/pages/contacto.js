@@ -9,23 +9,39 @@ import Btn from "../components/button/index.styled"
 import StyledInputs from "../components/contact/index"
 
 const Container = styled.section`
-  width: 60%;
-  margin: 0 auto;
+  @media (min-width: 768px) {
+    width: 60%;
+    margin: 0 auto;
+  }
 
   form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 0.5rem;
-  }
-  input:first-child {
-    grid-column: 1/2;
-  }
-  input:last-child {
-    grid-column: 2/3;
-  }
-  textarea,
-  button {
-    grid-column: 1/3;
+    margin-bottom: 0.5rem;
+
+    input,
+    textarea {
+      margin-bottom: 0.5rem;
+      @media (min-width: 512px) {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (min-width: 512px) {
+      display: grid;
+      grid-column: 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 0.5rem;
+
+      input:first-child {
+        grid-column: 1/2;
+      }
+      input:last-child {
+        grid-column: 2/3;
+      }
+      textarea,
+      button {
+        grid-column: 1/3;
+      }
+    }
   }
 `
 

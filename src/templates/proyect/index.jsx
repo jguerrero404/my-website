@@ -43,43 +43,6 @@ class Proyect extends React.Component {
       <Layout>
         <Article>
           <Title>{data.markdownRemark.frontmatter.title}</Title>
-          <Content>
-            <header>
-              <Video>Video Aqui</Video>
-              <Info>
-                <Description>
-                  <p>{data.markdownRemark.frontmatter.description}</p>
-                  <Author>
-                    {" "}
-                    <div className="avatar"></div>
-                    <div className="details">
-                      <em>
-                        Por <Link to="/acerca">José Guerrero</Link>
-                      </em>
-                    </div>
-                  </Author>
-                </Description>
-                <Details>
-                  <Buttons>
-                    <Btn>
-                      <IconGithub /> Repositorio
-                    </Btn>
-                    <Btn>Demo</Btn>
-                  </Buttons>
-                  <Tags>
-                    {data.markdownRemark.frontmatter.tags.map(tag => (
-                      <Tag name={tag} key={"tagProyect" + tag}>
-                        #{tag}
-                      </Tag>
-                    ))}
-                  </Tags>
-                </Details>
-              </Info>
-            </header>
-            <Body
-              dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
-            ></Body>
-          </Content>
           <Menu>
             <nav>
               <ul>
@@ -130,6 +93,43 @@ class Proyect extends React.Component {
               </ul>
             </nav>
           </Menu>
+          <Content>
+            <header>
+              <Video>Video Aqui</Video>
+              <Info>
+                <Description>
+                  <p>{data.markdownRemark.frontmatter.description}</p>
+                  <Author>
+                    {" "}
+                    <div className="avatar"></div>
+                    <div className="details">
+                      <em>
+                        Por <Link to="/acerca">José Guerrero</Link>
+                      </em>
+                    </div>
+                  </Author>
+                </Description>
+                <Details>
+                  <Buttons>
+                    <Btn>
+                      <IconGithub /> Repositorio
+                    </Btn>
+                    <Btn>Demo</Btn>
+                  </Buttons>
+                  <Tags>
+                    {data.markdownRemark.frontmatter.tags.map(tag => (
+                      <Tag name={tag} key={"tagProyect" + tag}>
+                        #{tag}
+                      </Tag>
+                    ))}
+                  </Tags>
+                </Details>
+              </Info>
+            </header>
+            <Body
+              dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+            ></Body>
+          </Content>
         </Article>
       </Layout>
     )

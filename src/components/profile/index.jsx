@@ -2,12 +2,14 @@ import React from "react"
 
 import { UserImage, UserName, UserPro } from "./styled"
 
-const User = ({ firtsName, secondName, pro }) => (
+const UserProfile = ({ firtsName, secondName, pro }) => (
   <>
     <UserImage />
-    <UserName><span>{firtsName}</span> {secondName}</UserName>
+    <UserName>
+      <span>{firtsName}</span> {secondName}
+    </UserName>
     <UserPro>{pro}</UserPro>
   </>
 )
 
-export default User
+export default UserProfile

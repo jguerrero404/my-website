@@ -4,8 +4,12 @@ import Tag from "../tag/index"
 export const CardGroup = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-  grid-gap: 2rem;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+  @media (min-width: 500px) {
+    grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
+    grid-gap: 2rem;
+  }
   justify-content: center;
 `
 
@@ -51,14 +55,25 @@ export const CardTitle = styled.h3`
   font-style: normal;
   font-family: "ratio", sans-serif;
   color: var(--h-color);
-  line-height: 28px;
+  line-height: 22px;
+  font-size: 17.55px;
   margin: 23.4px 0;
+  @media (min-width: 768px) {
+    line-height: 28px;
+    font-size: 23.4px;
+  }
 `
 
 export const CardText = styled.p`
   line-height: 24px;
   margin-bottom: 1em;
   font-family: sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  @media (min-width: 768px) {
+    line-height: 25px;
+    font-size: 20px;
+  }
 `
 export const CardTag = styled(Tag)`
   background-color: red;

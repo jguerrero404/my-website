@@ -10,13 +10,26 @@ import Btn from "../components/button/index.styled"
 import User from "../components/profile/index"
 
 const Me = styled.section`
-  width: 60%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
   margin: auto;
+  line-height: 1.2em;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    width: 60%;
+  }
+
+  p {
+    font-family: var(--font-head);
+    border-bottom: 2px dashed var(--sidenav-bg);
+    border-top: 2px dashed var(--sidenav-bg);
+    padding: 0.5em;
+    font-size: 17px;
+  }
 `
 
 const Info = styled.section`
@@ -39,7 +52,7 @@ const AboutPage = () => (
         ipsam quas quod dolorem neque modi mollitia, officiis possimus omnis
         molestias totam.
       </p>
-      <Btn width="25%">Resumen</Btn>
+      <Btn width="fit-content">Resumen</Btn>
     </Me>
     <Info>
       <Cell title="Codeardor" />

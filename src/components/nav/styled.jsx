@@ -6,31 +6,35 @@ export const Menu = styled.ul`
   margin: 0;
   position: fixed;
   z-index: 100;
+  right: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  width: calc(100% - 45px);
-  height: 45px;
-  margin-left: 45px;
+  width: fit-content;
+  box-shadow: var(--sidenav-shadow);
 
   @media (min-width: 768px) {
     display: block;
-    width: 70px;
-    max-width: var(--sidenav-max-width);
+    width: var(--sidenav-width);
+    max-width: var(--sidenav-width);
+    height: 100%;
+    position: static;
   }
 `
 export const MenuItem = styled.li`
   list-style: none;
-  width: 45px;
-  height: 45px;
+  width: var(--sidenav-width);
+  height: var(--sidenav-width);
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
+  box-shadow: 1.5px 0 5px -5px #010101;
 
-  @media (mi-width: 768px) {
+  @media (min-width: 768px) {
     margin-bottom: 10px;
+    box-shadow: none;
   }
 
   /* Active */
@@ -49,28 +53,27 @@ export const MenuLink = styled(Link)`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-
-  @media (min-width) {
-    width: 70px;
-    height: 70px;
-
-    &:hover {
-      opacity: 1;
-      fill: "#000";
-    }
-  }
+  width: var(--sidenav-width);
+  height: var(--sidenav-width);
 
   /* Estilos del titulo */
   div {
-    position: fixed;
-    transform: scale(0) translateX(0);
-    left: -3px;
-    transition: transform 0.3s ease-out;
-    opacity: 0.8;
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+      position: fixed;
+      transform: scale(0) translateX(0);
+      left: -3px;
+      transition: transform 0.3s ease-out;
+      opacity: 0.8;
+      z-index: 100;
+    }
   }
-  &:hover > div {
-    transform: scale(1) translateX(70px);
-    transition: transform 0ms ease-in;
+  @media (min-width: 768px) {
+    &:hover > div {
+      transform: scale(1) translateX(70px);
+      transition: transform 0ms ease-in;
+    }
   }
   /* Estilos del icono */
   svg {
@@ -84,7 +87,9 @@ export const MenuLink = styled(Link)`
     }
   }
 
-  &:hover > svg {
-    fill: var(--green);
+  @media (min-width: 768px) {
+    &:hover > svg {
+      fill: var(--green);
+    }
   }
 `

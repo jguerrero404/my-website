@@ -43,25 +43,21 @@ const PortfolioPage = () => {
     }
   `)
   // Array de los proyectos
-  const { proyects } = data.allMarkdownRemark.edges
+  const proyects = data.allMarkdownRemark.edges
   return (
     <Layout title="Portafolio">
       <SEO title="Portafolio" />
       <CardGroup>
         {proyects.map(proyect => {
-          // data simplificada
-          const { title, description, tags } = proyect.node.frontmatter,
-            { image } = proyect.node.frontmatter.childImageSharp.fluid,
-            { slug } = proyect.node.fields.slug
           // Creacion del proyecto
           return (
             <Card
-              image={image}
-              title={title}
-              url={"/portafolio/" + slug}
-              text={description}
-              tag={tags}
-              key={slug}
+              image={proyect.node.frontmatter.image.childImageSharp.fluid}
+              title={proyect.node.frontmatter.title}
+              url={"/portafolio/" + proyect.node.fields.slug}
+              text={proyect.node.frontmatter.description}
+              tag={proyect.node.frontmatter.tags}
+              key={proyect.node.fields.slug}
             ></Card>
           )
         })}

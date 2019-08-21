@@ -1,7 +1,12 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import { IconYoutube, IconTwiter, IconGithub, IconSlack } from "../../utils/theme/icons"
+import {
+  IconYoutube,
+  IconTwiter,
+  IconGithub,
+  IconSlack,
+} from "../../utils/theme/icons"
 
 import { FooterContainer, FooterCreated, FooterIcons } from "./styled"
 
@@ -12,10 +17,11 @@ const Footer = () => (
       creemoslo juntos
     </p>
     <FooterCreated>
-      Copyright © {new Date().getFullYear()}
-      <br />
-      Creado con <b>Logo Gatsby</b> <b>logo react</b> Por{" "}
-      <Link to="/acerca">José Guerrero</Link>
+      <p> Copyright © {new Date().getFullYear()}</p>
+      <p>
+        Creado Por
+        <Link to="/acerca"> José Guerrero</Link>
+      </p>
     </FooterCreated>
     <FooterIcons>
       <a href="https://icon.com" className="icon-youtube">

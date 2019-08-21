@@ -8,13 +8,18 @@ export const FooterContainer = styled.footer`
   text-align: center;
   min-height: 250px;
   margin-top: 120px;
-  font-size: 0.85em;
   opacity: 0.8;
   font-family: sans-serif;
 
+  &,
   p {
-    line-height: 21px;
     margin-bottom: 0;
+    line-height: 1.5em;
+    font-size: 0.8em;
+
+    @media (min-width: 768px) {
+      font-size: 0.9em;
+    }
   }
 `
 export const FooterCreated = styled.div`

@@ -11,7 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     font-weight: 700;
     border-radius: 3px;
     font-size: 15px;
-    line-height: 17px;
+    line-height: 20px;
     background-color: var(--sidenav-bg);
   }
 

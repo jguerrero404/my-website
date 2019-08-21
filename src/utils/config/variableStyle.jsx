@@ -2,11 +2,15 @@ import { createGlobalStyle } from "styled-components"
 
 export const VariableStyle = createGlobalStyle`
 :root {
---sidenav-width: 70px;
---sidenav-max-width: 70px;
 --sidenav-bg: var(--gray-5);
 --sidenav-shadow: 4px 0 10px -3px #010101;
 --sidenav-border:2px dashed var(--text-color);
+--sidenav-width: 45px;
+--sidenav-max-width: 45px;
+@media (min-width: 768px) {
+    --sidenav-width: 70px;
+    --sidenav-max-width: 70px;
+}
 
 --card-bg: var(--gray-5);
 --card-shadow: 0 4px 8px rgba(0, 0, 0, 0, 0.38);

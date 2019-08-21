@@ -49,11 +49,14 @@ export const Tag = styled.span`
   padding: 0.2em 0.5em 0.3em;
   background-color: var(--tag-bg);
   color: var(--text-color);
-  font-size: ${({ size }) => (size ? "1.2em" : "0.7em")};
   letter-spacing: 0.15ch;
+  margin: 0.25em;
+  font-size: ${({ size }) => (size ? "18px" : "10.5px")};
+  line-height: ${({ size }) => (size ? "22px" : "13px")};
   font-weight: ${({ size }) => (size ? "600" : "400")};
-  margin: 0.25em 0.205em;
-  line-height: 17px;
+  @media (min-width: 768px) {
+    font-size: ${({ size }) => (size ? "1.2em" : "0.7em")};
+    line-height: ${({ size }) => (size ? "29px" : "17px")};
+  }
   font-family: sans-serif;
-  line-height: ${({ size }) => (size ? "29px" : "17px")};
 `
