@@ -34,6 +34,7 @@ export const Container = styled.section`
       div:nth-child(3),
       button {
         grid-column: 1 / 3;
+        width: 100%;
       }
     }
   }
