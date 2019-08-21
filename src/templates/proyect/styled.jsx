@@ -102,7 +102,7 @@ export const Buttons = styled.div`
     margin: 0;
   }
 
-  button:first-child {
+  button {
     margin-right: var(--gutter-small);
     display: flex;
     justify-content: center;
@@ -110,7 +110,14 @@ export const Buttons = styled.div`
 
     svg {
       width: 1em;
-      margin-right: 0.25em;
+
+      &:first-child {
+        margin-right: 0.25em;
+      }
+
+      &:last-child {
+        margin-left: 0.25rem;
+      }
     }
   }
 `

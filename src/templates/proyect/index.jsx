@@ -7,7 +7,7 @@ import SEO from "../../components/seo"
 // UI
 import Tag from "../../components/tag/index"
 import Btn from "../../components/button/index.styled"
-import { IconGithub } from "../../utils/theme/icons"
+import { IconGithub, IconExternal } from "../../utils/theme/icons"
 
 import {
   Article,
@@ -118,10 +118,11 @@ class Proyect extends React.Component {
                 <Details>
                   <Buttons>
                     <Btn color="#000" background="var(--gray-2)">
-                      <IconGithub /> Repositorio
+                      <IconGithub />
+                      Repositorio
                     </Btn>
-                    <Btn color="#fff" background="var(--orange)">
-                      Demo
+                    <Btn color="#000" background="var(--yellow)">
+                      Demo <IconExternal />
                     </Btn>
                   </Buttons>
                   <Tags>
