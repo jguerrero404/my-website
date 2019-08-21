@@ -23,9 +23,13 @@ const IndexPage = () => (
         </h1>
         <Buttons>
           <Link to="/contacto">
-            <Btn ghost>Contactame</Btn>
+            <Btn ghost background="var(--primary-color)">
+              Contactame
+            </Btn>
           </Link>
-          <Btn>Resumen</Btn>
+          <Btn background="var(--primary-color)" color="#fff">
+            Resumen
+          </Btn>
         </Buttons>
       </Title>
       <Logo>

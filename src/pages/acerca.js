@@ -40,7 +40,7 @@ const Me = styled.section`
 const Info = styled.section`
   margin-top: var(--gutter-big);
   display: grid;
-  grid-gap:  var(--gutter);
+  grid-gap: var(--gutter);
   grid-template-columns: repeat(auto-fit, minmax(300px, 399px));
   justify-content: center;
   align-items: center;
@@ -57,7 +57,9 @@ const AboutPage = () => (
         ipsam quas quod dolorem neque modi mollitia, officiis possimus omnis
         molestias totam.
       </p>
-      <Btn width="fit-content">Resumen</Btn>
+      <Btn background="var(--primary-color)" color="#fff">
+        Resumen
+      </Btn>
     </Me>
     <Info>
       <Cell title="Codeardor" />

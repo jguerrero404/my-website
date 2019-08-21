@@ -17,7 +17,7 @@ const PortfolioPage = () => {
     4. Imagen con un maxwidth de 500px. Portada del proyecto
     5. Slug: es la el nombre de la carpeta del proyecto donde esta el contenido
   */
-  const { data } = useStaticQuery(graphql`
+  const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark {
         edges {

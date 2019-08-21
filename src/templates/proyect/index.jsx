@@ -117,10 +117,10 @@ class Proyect extends React.Component {
                 </Description>
                 <Details>
                   <Buttons>
-                    <Btn>
+                    <Btn color="#000" background="var(--gray-2)">
                       <IconGithub /> Repositorio
                     </Btn>
-                    <Btn>Demo</Btn>
+                    <Btn color="#fff" background="var(--orange)">Demo</Btn>
                   </Buttons>
                   <Tags>
                     {data.markdownRemark.frontmatter.tags.map(tag => (

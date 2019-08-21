@@ -100,19 +100,8 @@ export const Buttons = styled.div`
     margin: 0;
   }
 
-  button {
-    line-height: 12px;
-    font-size: 9.38px;
-    @media (min-width: 768px) {
-      line-height: 15px;
-      font-size: 12.5px;
-    }
-  }
-
   button:first-child {
     margin-right: var(--gutter-small);
-    background-color: var(--gray-2);
-    color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,9 +110,6 @@ export const Buttons = styled.div`
       width: 1em;
       margin-right: 0.25em;
     }
-  }
-  button:last-child {
-    background-color: var(--orange);
   }
 `
 export const Tags = styled.div`

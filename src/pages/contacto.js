@@ -54,7 +54,9 @@ const ContactPage = () => (
         <input type="text" placeholder="NOMBRE" />
         <input type="email" placeholder="CORREO" />
         <textarea name="mensaje" placeholder="MENSAJE"></textarea>
-        <Btn width="100%">Enviar</Btn>
+        <Btn width="100%" background="var(--primary-color)" color="#fff">
+          Enviar
+        </Btn>
       </form>
     </Container>
   </Layout>
