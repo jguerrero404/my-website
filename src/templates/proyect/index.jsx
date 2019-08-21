@@ -21,7 +21,7 @@ import {
   Tags,
   Author,
   Body,
-  Menu,
+  // Menu,
 } from "./styled"
 
 export const query = graphql`
@@ -49,7 +49,7 @@ class Proyect extends React.Component {
         />
         <Article>
           <Title>{data.markdownRemark.frontmatter.title}</Title>
-          <Menu>
+          {/* <Menu>
             <nav>
               <ul>
                 <li>
@@ -98,7 +98,7 @@ class Proyect extends React.Component {
                 </li>
               </ul>
             </nav>
-          </Menu>
+          </Menu> */}
           <Content>
             <header>
               <Video>Video Aqui</Video>
