@@ -9,11 +9,12 @@ import Cell from "../components/cell/index"
 import Btn from "../components/button/index.styled"
 import User from "../components/profile/index"
 import {
-  IconAbout,
   IconSkill,
   IconChess,
   IconBook,
   IconReadBook,
+  IconPencil,
+  IconBarGraph,
 } from "../utils/theme/icons"
 
 const Me = styled.section`
@@ -81,10 +82,10 @@ const AboutPage = () => (
         <IconBook />
       </Cell>
       <Cell title="Aprendiz en Traeding ">
-        <IconAbout />
+        <IconBarGraph />
       </Cell>
       <Cell title="Creador de Contenidos">
-        <IconAbout />
+        <IconPencil />
       </Cell>
     </Info>
   </Layout>

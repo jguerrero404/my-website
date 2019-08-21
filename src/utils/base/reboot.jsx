@@ -46,9 +46,6 @@ template {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
-}
-a:active,
-a:hover {
   outline-width: 0;
 }
 abbr[title] {
@@ -145,7 +142,7 @@ button::-moz-focus-inner {
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring,
 button:-moz-focusring {
-  outline: 1px dotted ButtonText;
+  outline-width: 0;
 }
 fieldset {
   border: 1px solid silver;
