@@ -104,6 +104,7 @@ export const GlobalStyle = createGlobalStyle`
     div:first-child:hover ~ div:last-child {
       opacity: 1;
       transform: scale(1);
+      z-index: 300;
     }
     div:last-child {
       display: flex;

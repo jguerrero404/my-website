@@ -30,6 +30,8 @@ export const query = graphql`
       title
       description
       tags
+      repo
+      demo
       body {
         json
       }
@@ -74,13 +76,17 @@ class Proyect extends React.Component {
                 </Description>
                 <Details>
                   <Buttons>
-                    <Btn color="#000" background="var(--gray-2)">
-                      <IconGithub />
-                      Repositorio
-                    </Btn>
-                    <Btn color="#000" background="var(--yellow)">
-                      Demo <IconExternal />
-                    </Btn>
+                    <a href={data.contentfulProyects.repo} target="__blanck">
+                      <Btn color="#000" background="var(--gray-2)">
+                        <IconGithub />
+                        Repositorio
+                      </Btn>
+                    </a>
+                    <a href={data.contentfulProyects.demo} target="__blanck">
+                      <Btn color="#000" background="var(--yellow)">
+                        Demo <IconExternal />
+                      </Btn>
+                    </a>
                   </Buttons>
                   <Tags>
                     {data.contentfulProyects.tags.split(",").map((tag, i) => (
