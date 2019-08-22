@@ -1,5 +1,6 @@
+// Constructor
 import React from "react"
-
+// Base
 import Layout from "../layout/index"
 import SEO from "../components/seo"
 

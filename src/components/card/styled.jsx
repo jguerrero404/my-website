@@ -1,6 +1,14 @@
 import styled from "styled-components"
 import Tag from "../tag/index"
 
+export const CardGroup = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  grid-gap: 2rem;
+  justify-content: center;
+`
+
 export const CardWrapper = styled.article`
   width: 100%;
   max-width: 500px;

@@ -1,21 +1,22 @@
+// Contructors
 import React from "react"
-import styled from "styled-components"
-
+import { graphql, useStaticQuery } from "gatsby"
+// Base
 import Layout from "../layout/index"
 import SEO from "../components/seo"
-import { graphql, useStaticQuery } from "gatsby"
-
+// UI
 import Card from "../components/card/index"
-
-const CardGroup = styled.div`
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-  grid-gap: 2rem;
-  justify-content: center;
-`
+import { CardGroup } from "../components/card/styled"
 
 const PortfolioPage = () => {
+  // Peticion de datos sobre los proyectos
+  /* 
+    1. Titulo del proyecto
+    2. Descripción del proyecto
+    3. Tags que caracterizan las tecnologias utilizadas en el proyecto
+    4. Imagen con un maxwidth de 500px. Portada del proyecto
+    5. Slug: es la el nombre de la carpeta del proyecto donde esta el contenido
+  */
   const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark {
@@ -41,20 +42,29 @@ const PortfolioPage = () => {
       }
     }
   `)
+  // Array de los proyectos
+  const { proyects } = data.allMarkdownRemark.edges
   return (
     <Layout title="Portafolio">
       <SEO title="Portafolio" />
       <CardGroup>
-        {data.allMarkdownRemark.edges.map(post => (
-          <Card
-            image={post.node.frontmatter.image.childImageSharp.fluid}
-            title={post.node.frontmatter.title}
-            url={"/portafolio/" + post.node.fields.slug}
-            text={post.node.frontmatter.description}
-            tag={post.node.frontmatter.tags}
-            key={post.node.fields.slug}
-          ></Card>
-        ))}
+        {proyects.map(proyect => {
+          // data simplificada
+          const { title, description, tags } = proyect.node.frontmatter,
+            { image } = proyect.node.frontmatter.childImageSharp.fluid,
+            { slug } = proyect.node.fields.slug
+          // Creacion del proyecto
+          return (
+            <Card
+              image={image}
+              title={title}
+              url={"/portafolio/" + slug}
+              text={description}
+              tag={tags}
+              key={slug}
+            ></Card>
+          )
+        })}
       </CardGroup>
     </Layout>
   )

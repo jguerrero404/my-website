@@ -1,9 +1,10 @@
+// Constructor
 import React from "react"
 import styled from "styled-components"
-
+// Base
 import SEO from "../components/seo"
 import Layout from "../layout/index"
-
+// UI
 import Cell from "../components/cell/index"
 import Btn from "../components/button/index.styled"
 import User from "../components/profile/index"

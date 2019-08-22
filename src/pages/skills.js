@@ -1,9 +1,11 @@
+// Constructor
 import React from "react"
-
+import styled from "styled-components"
+// Base
 import Layout from "../layout/index"
 import SEO from "../components/seo"
+// UI
 import Tag from "../components/tag/index"
-import styled from "styled-components"
 
 const mySkills = [
   "html",
