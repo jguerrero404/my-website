@@ -27,7 +27,7 @@ const IndexPage = () => (
               Explora
             </Btn>
           </Link>
-          <Link to="/portafolio">
+          <Link to="/contacto">
             <Btn background="var(--gray-5)">Contactame</Btn>
           </Link>
         </Buttons>

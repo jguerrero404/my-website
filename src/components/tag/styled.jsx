@@ -5,6 +5,21 @@ export const Styles = styled.div`
     background-color: var(--text-color);
     color: var(--background);
   }
+  .tag-error,
+  .tag-correct {
+    color: #fff;
+    svg {
+      width: 0.7em;
+      height: 0.7em;
+      fill: #fff;
+    }
+  }
+  .tag-error {
+    background-color: var(--red);
+  }
+  .tag-correct {
+    background-color: var(--green);
+  }
   .tag-node {
     background: #90c53f;
     color: #46483d;
