@@ -38,6 +38,12 @@ export const Nav = styled.nav`
   }
 `
 export const Main = styled.main`
-  padding: var(--gutter);
   overflow-y: auto;
+  overflow-x: hidden;
+
+  #container {
+    padding: var(--gutter);
+    transform: translateX(100%);
+    opacity: 0;
+  }
 `

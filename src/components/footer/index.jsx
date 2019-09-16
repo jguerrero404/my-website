@@ -17,11 +17,11 @@ function Footer() {
       query {
         site {
           siteMetadata {
-           social {
-             twitter
-             github
-             slack
-           }
+            social {
+              twitter
+              github
+              slack
+            }
           }
         }
       }

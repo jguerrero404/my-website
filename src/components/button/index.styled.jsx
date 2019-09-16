@@ -2,7 +2,8 @@ import styled from "styled-components"
 
 const Button = styled.button`
   width: ${({ width }) => width};
-  border: ${({ ghost, background}) => (ghost ? "1px solid " + background : "none")};
+  border: ${({ ghost, background }) =>
+    ghost ? "1px solid " + background : "none"};
   padding: 1em 2em;
   text-decoration: none;
   text-align: center;
@@ -11,7 +12,8 @@ const Button = styled.button`
   font-weight: 700;
   border-radius: 3px;
   cursor: pointer;
-  background-color: ${({ ghost, background }) => (ghost ? "transparent" : background)};
+  background-color: ${({ ghost, background }) =>
+    ghost ? "transparent" : background};
   color: ${({ ghost, color, background }) => (ghost ? background : color)};
   display: block;
   line-height: 12px;

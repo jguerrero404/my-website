@@ -6,7 +6,7 @@ export const HeaderContainer = styled.header`
   font-style: normal;
   color: #fff;
   line-height: 48px;
-  margin: var(--gutter-big) 0; 
+  margin: var(--gutter-big) 0;
   @media (min-width: 768px) {
     margin: var(--gutter) 0;
   }

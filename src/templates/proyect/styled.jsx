@@ -47,7 +47,7 @@ export const Content = styled.section`
 `
 export const Video = styled.div`
   width: 100%;
-  height: 200px;
+  height: 400px;
   background-color: black;
   display: flex;
   justify-content: center;
