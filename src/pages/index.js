@@ -17,19 +17,19 @@ const IndexPage = () => (
         <h1>
           Hola,
           <br />
-          soy <strong>José Guerrero</strong>,
+          soy 👉 <strong>José Guerrero</strong>,
           <br />
-          desarrollador web
+          desarrollador web 🚀
         </h1>
         <Buttons>
-          <Link to="/contacto">
-            <Btn ghost background="var(--primary-color)">
-              Contactame
+          <Link to="/portafolio">
+            <Btn background="var(--primary-color)" color="#fff">
+              Explora
             </Btn>
           </Link>
-          <Btn background="var(--primary-color)" color="#fff">
-            Resumen
-          </Btn>
+          <Link to="/portafolio">
+            <Btn background="var(--gray-5)">Contactame</Btn>
+          </Link>
         </Buttons>
       </Title>
       <Logo>
@@ -42,34 +42,50 @@ const IndexPage = () => (
 export default IndexPage
 
 const Container = styled.section`
-  display: grid;
-  grid-template-columns: 40% 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  height: calc(100vh - 3em);
+  height: calc(100vh - 2em);
 
-  div {
-    display: flex;
-    height: calc(100vh - 3em);
-    justify-content: center;
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    width: 100%;
   }
 `
 const Title = styled.div`
-  width: 100%;
   flex-direction: column;
-  margin-left: var(--gutter-big);
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 1024px) {
+    margin-left: var(--gutter);
+  }
   h1,
   strong {
     font-family: var(--font-head);
-    line-height: 55.8px;
-    font-size: 45.8px;
     color: #fff;
+    line-height: 36px;
+    font-size: 30px;
+    @media (min-width: 512px) {
+      line-height: 48px;
+      font-size: 40px;
+    }
   }
 `
 const Logo = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   svg {
-    height: 100%;
-    width: 100%;
     fill: var(--primary-color);
+    display: none;
+    @media (min-width: 1024px) {
+      display: block;
+      width: 100%;
+      max-width: 500px;
+    }
   }
 `
 
