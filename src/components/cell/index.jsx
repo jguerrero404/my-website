@@ -2,9 +2,9 @@ import React from "react"
 
 import { CellGroup, CellImage, CellTitle } from "./styled"
 
-const Cell = ({ image, title }) => (
+const Cell = ({ children, title }) => (
   <CellGroup>
-    <CellImage image={image}></CellImage>
+    <CellImage>{children}</CellImage>
     <CellTitle>{title}</CellTitle>
   </CellGroup>
 )

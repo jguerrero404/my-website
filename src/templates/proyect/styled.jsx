@@ -211,7 +211,7 @@ export const Menu = styled.aside`
     position: static;
     @media (min-width: 1024px) {
       position: sticky;
-      top: 0;
+      top: var(--gutter);
     }
   }
   nav {

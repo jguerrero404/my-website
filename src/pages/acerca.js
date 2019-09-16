@@ -8,6 +8,7 @@ import Layout from "../layout/index"
 import Cell from "../components/cell/index"
 import Btn from "../components/button/index.styled"
 import User from "../components/profile/index"
+import { IconAbout, IconSkill, IconChess } from "../utils/theme/icons"
 
 const Me = styled.section`
   width: 100%;
@@ -52,22 +53,33 @@ const AboutPage = () => (
     <Me>
       <User firtsName="José" secondName="Guerrero" pro="Desarrollador Web" />
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam facere
-        sapiente, soluta repudiandae vero sequi, dolore aliquid debitis beatae
-        ipsam quas quod dolorem neque modi mollitia, officiis possimus omnis
-        molestias totam.
+        Soy un desarrollador web full stack. Disfruto y encuentro facinante
+        resolver problemas implementando características y nuevas tecnologías
+        tanto en el frontend como en el backend.
       </p>
       <Btn background="var(--primary-color)" color="#fff">
         Resumen
       </Btn>
     </Me>
     <Info>
-      <Cell title="Codeardor" />
-      <Cell title="Amante de la lectura" />
-      <Cell title="Jugador de ajedrez" />
-      <Cell title="Autodidacta" />
-      <Cell title="Aprendiz en Traeding " />
-      <Cell title="Creador de Contenidos" />
+      <Cell title="Codeardor">
+        <IconSkill />
+      </Cell>
+      <Cell title="Amante de la lectura">
+        <IconAbout />
+      </Cell>
+      <Cell title="Jugador de ajedrez">
+        <IconChess />
+      </Cell>
+      <Cell title="Autodidacta">
+        <IconAbout />
+      </Cell>
+      <Cell title="Aprendiz en Traeding ">
+        <IconAbout />
+      </Cell>
+      <Cell title="Creador de Contenidos">
+        <IconAbout />
+      </Cell>
     </Info>
   </Layout>
 )

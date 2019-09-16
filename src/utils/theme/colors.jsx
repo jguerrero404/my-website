@@ -44,6 +44,7 @@ export const Colors = createGlobalStyle`
 --green-grad:linear-gradient(to bottom right,var(--green-light),var(--green-dark) 85%);
 
 --primary-color: var(--green);
+--primary-color-dark: var(--green-dark);
 
 transition:all .3s ease
 }

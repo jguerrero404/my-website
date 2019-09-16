@@ -16,8 +16,15 @@ export const CellImage = styled.div`
   height: 60px;
   background: black;
   border-radius: 10px;
-  background-image: url(${props => props.image});
-  background-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--sidenav-bg);
+
+  svg {
+    fill: var(--text-color);
+    width: 1.5em;
+  }
 `
 
 export const CellTitle = styled.div`
