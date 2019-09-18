@@ -8,7 +8,13 @@ import Layout from "../layout/index"
 import Cell from "../components/cell/index"
 import Btn from "../components/button/index.styled"
 import User from "../components/profile/index"
-import { IconAbout, IconSkill, IconChess } from "../utils/theme/icons"
+import {
+  IconAbout,
+  IconSkill,
+  IconChess,
+  IconBook,
+  IconReadBook,
+} from "../utils/theme/icons"
 
 const Me = styled.section`
   width: 100%;
@@ -66,13 +72,13 @@ const AboutPage = () => (
         <IconSkill />
       </Cell>
       <Cell title="Amante de la lectura">
-        <IconAbout />
+        <IconReadBook />
       </Cell>
       <Cell title="Jugador de ajedrez">
         <IconChess />
       </Cell>
       <Cell title="Autodidacta">
-        <IconAbout />
+        <IconBook />
       </Cell>
       <Cell title="Aprendiz en Traeding ">
         <IconAbout />
