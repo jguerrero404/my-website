@@ -1,13 +1,11 @@
 import styled from "styled-components"
 
 export const UserImage = styled.div`
-  width: 100px;
+   width: 100px;
   height: 100px;
-  background-color: var(--primary-color);
   border-radius: 50%;
+  overflow: hidden;
   margin-bottom: var(--gutter);
-  @media (min-width: 768px) {
-  }
 `
 
 export const UserName = styled.h2`

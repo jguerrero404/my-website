@@ -49,11 +49,12 @@ export const Content = styled.section`
 `
 export const Video = styled.div`
   width: 100%;
-  height: 400px;
+  height: 450px;
   background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  iframe {
+      width: 100%;
+      height: 100%;
+  }
 `
 export const Info = styled.div`
   display: grid;
@@ -130,29 +131,6 @@ export const Tags = styled.div`
 
   @media (min-width: 768px) {
     justify-content: flex-end;
-  }
-`
-export const Author = styled.div`
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  font-weight: 700;
-  margin: var(--gutter) 0;
-  color: #fff;
-  line-height: 17px;
-  font-size: 13.8px;
-  @media (min-width: 768px) {
-    font-size: 18.4px;
-    line-height: 23px;
-  }
-
-  .avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    margin-right: var(--gutter-small);
-    box-shadow: var(--sidenav-shadow);
-    background-color: var(--primary-color);
   }
 `
 export const Body = styled.div`

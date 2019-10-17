@@ -1,6 +1,6 @@
 // Constructor
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 // Base
 import Layout from "../../layout/index"
@@ -9,6 +9,7 @@ import SEO from "../../components/seo"
 import Tag from "../../components/tag/index"
 import Btn from "../../components/button/index.styled"
 import { IconGithub, IconExternal } from "../../utils/theme/icons"
+import User from "../../components/user/index"
 
 import {
   Article,
@@ -20,7 +21,6 @@ import {
   Details,
   Buttons,
   Tags,
-  Author,
   Body,
 } from "./styled"
 
@@ -29,6 +29,7 @@ export const query = graphql`
     contentfulProyects(slug: { eq: $slug }) {
       title
       description
+      video
       tags
       repo
       demo
@@ -60,19 +61,19 @@ class Proyect extends React.Component {
           <Title>{data.contentfulProyects.title}</Title>
           <Content>
             <header>
-              <Video>Video Aqui</Video>
+              <Video>
+                <iframe
+                    title="Proyecto"
+                    src={data.contentfulProyects.video}
+                    frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+              </Video>
               <Info>
                 <Description>
                   <p>{data.contentfulProyects.description}</p>
-                  <Author>
-                    {" "}
-                    <div className="avatar"></div>
-                    <div className="details">
-                      <em>
-                        Por <Link to="/acerca">José Guerrero</Link>
-                      </em>
-                    </div>
-                  </Author>
+                  <User/>
                 </Description>
                 <Details>
                   <Buttons>

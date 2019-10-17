@@ -1,10 +1,9 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { Author, User } from "./styled"
 import Img from "gatsby-image"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
-import { UserImage, UserName, UserPro } from "./styled"
-
-const UserProfile = ({ firtsName, secondName, pro }) => {
+const UserComponent = () => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "images/jose-guerrero.jpg" }) {
@@ -18,16 +17,17 @@ const UserProfile = ({ firtsName, secondName, pro }) => {
   `)
 
   return (
-    <>
-      <UserImage>
+    <Author>
+      <User>
         <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-      </UserImage>
-      <UserName>
-        <span>{firtsName}</span> {secondName}
-      </UserName>
-      <UserPro>{pro}</UserPro>
-    </>
+      </User>
+      <div className="details">
+        <em>
+          Por <Link to="/acerca">José Guerrero</Link>
+        </em>
+      </div>
+    </Author>
   )
 }
 
-export default UserProfile
+export default UserComponent
