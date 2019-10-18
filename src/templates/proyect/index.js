@@ -63,17 +63,17 @@ class Proyect extends React.Component {
             <header>
               <Video>
                 <iframe
-                    title="Proyecto"
-                    src={data.contentfulProyects.video}
-                    frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                </iframe>
+                  title="Proyecto"
+                  src={data.contentfulProyects.video}
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
               </Video>
               <Info>
                 <Description>
                   <p>{data.contentfulProyects.description}</p>
-                  <User/>
+                  <User />
                 </Description>
                 <Details>
                   <Buttons>

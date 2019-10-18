@@ -52,8 +52,8 @@ export const Video = styled.div`
   height: 450px;
   background-color: black;
   iframe {
-      width: 100%;
-      height: 100%;
+    width: 100%;
+    height: 100%;
   }
 `
 export const Info = styled.div`

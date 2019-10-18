@@ -64,9 +64,11 @@ const AboutPage = () => (
         resolver problemas implementando características y nuevas tecnologías
         tanto en el frontend como en el backend.
       </p>
-      <Btn background="var(--primary-color)" color="#fff">
-        Resumen
-      </Btn>
+      <a href="https://drive.google.com/uc?id=1W1FLkUWqdjLEkyO0baEtLXzXJmPUJEIS&export=download">
+        <Btn background="var(--primary-color)" color="#fff">
+          Resumen
+        </Btn>
+      </a>
     </Me>
     <Info>
       <Cell title="Codeardor">
