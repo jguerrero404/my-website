@@ -19,20 +19,10 @@ import { IconLogo } from "../utils/theme/icons"
 
 class Layout extends Component {
   componentDidMount() {
-    new TimelineMax()
-      .to("#container", 1, {
-        x: 0,
-        ease: Power4.easeOut,
-      })
-      .to(
-        "#container",
-        1,
-        {
-          opacity: 1,
-          ease: Power4.easeOut,
-        },
-        "-= 0.65"
-      )
+    new TimelineMax().to("#container", 1, {
+      opacity: 1,
+      ease: Power4.easeOut,
+    })
   }
 
   render() {

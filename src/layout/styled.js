@@ -43,7 +43,6 @@ export const Main = styled.main`
 
   #container {
     padding: var(--gutter);
-    transform: translateX(100%);
     opacity: 0;
   }
 `

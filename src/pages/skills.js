@@ -10,7 +10,10 @@ import Tag from "../components/tag/index"
 const mySkills = [
   "html",
   "javascript",
+  "ajax",
+  "websocket",
   "css",
+  "jquery",
   "responsive-desing",
   "react",
   "animation",

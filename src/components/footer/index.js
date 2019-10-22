@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
+import { OutboundLink } from "gatsby-plugin-google-analytics"
 
 import {
   IconYoutube,
@@ -42,7 +43,7 @@ function Footer() {
         </p>
       </FooterCreated>
       <FooterIcons>
-        <a
+        <OutboundLink
           href={site.siteMetadata.social.twitter}
           target="__blanck"
           className="icon-twiter"
@@ -50,8 +51,8 @@ function Footer() {
           <i>
             <IconTwiter />
           </i>
-        </a>
-        <a
+        </OutboundLink>
+        <OutboundLink
           href={site.siteMetadata.social.github}
           target="__blanck"
           className="icon-github"
@@ -59,8 +60,8 @@ function Footer() {
           <i>
             <IconGithub />
           </i>
-        </a>
-        <a
+        </OutboundLink>
+        <OutboundLink
           href={site.siteMetadata.social.linkedin}
           target="__blanck"
           className="icon-linkedin"
@@ -68,12 +69,16 @@ function Footer() {
           <i>
             <IconLinkedin />
           </i>
-        </a>
-        <a href="https://icon.com" target="__blanck" className="icon-youtube">
+        </OutboundLink>
+        <OutboundLink
+          href="https://icon.com"
+          target="__blanck"
+          className="icon-youtube"
+        >
           <i>
             <IconYoutube />
           </i>
-        </a>
+        </OutboundLink>
       </FooterIcons>
     </FooterContainer>
   )
