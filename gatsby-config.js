@@ -6,8 +6,8 @@ module.exports = {
     social: {
       twitter: "https://twitter.com/jguerrero404",
       github: "https://github.com/jguerrero404",
-      facebook: "https://facebook.com/jguerrero404",
-      slack: "https://slack.com/jguerrero404",
+      youtube: "https://facebook.com/jguerrero404",
+      linkedin: "https://www.linkedin.com/in/jguerrero404/",
     },
   },
   plugins: [

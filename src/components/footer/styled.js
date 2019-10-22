@@ -46,9 +46,9 @@ export const FooterIcons = styled.div`
     fill: #1da1f2;
   }
   .icon-github {
-    fill: #333;
+    fill: var(--gray-2);
   }
-  .icon-slack {
-    fill: #ce1f5b;
+  .icon-linkedin{
+    fill: #0e76a8;
   }
 `

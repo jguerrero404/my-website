@@ -6,7 +6,7 @@ import {
   IconYoutube,
   IconTwiter,
   IconGithub,
-  IconSlack,
+  IconLinkedin,
 } from "../../utils/theme/icons"
 
 import { FooterContainer, FooterCreated, FooterIcons } from "./styled"
@@ -20,7 +20,8 @@ function Footer() {
             social {
               twitter
               github
-              slack
+              linkedin
+              youtube
             }
           }
         }
@@ -41,24 +42,38 @@ function Footer() {
         </p>
       </FooterCreated>
       <FooterIcons>
-        <a href="https://icon.com" className="icon-youtube">
-          <i>
-            <IconYoutube />
-          </i>
-        </a>
-        <a href={site.siteMetadata.social.twitter} className="icon-twiter">
+         <a
+          href={site.siteMetadata.social.twitter}
+          target="__blanck"
+          className="icon-twiter"
+        >
           <i>
             <IconTwiter />
           </i>
         </a>
-        <a href={site.siteMetadata.social.github} className="icon-github">
+       <a
+          href={site.siteMetadata.social.github}
+          target="__blanck"
+          className="icon-github"
+        >
           <i>
             <IconGithub />
           </i>
         </a>
-        <a href={site.siteMetadata.social.slack} className="icon-slack">
+        <a
+          href={site.siteMetadata.social.linkedin}
+          target="__blanck"
+          className="icon-linkedin"
+        >
           <i>
-            <IconSlack />
+            <IconLinkedin />
+          </i>
+        </a>
+        <a href="https://icon.com"
+            target="__blanck"
+            className="icon-youtube">
+          <i>
+            <IconYoutube />
           </i>
         </a>
       </FooterIcons>
