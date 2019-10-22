@@ -1,5 +1,6 @@
 module.exports = {
   siteMetadata: {
+    siteUrl: `https://gallant-newton-c62738.netlify.com`,
     title: `José Guerrero`,
     description: `Este es mi sitio web personal`,
     author: `José Guerrero`,
@@ -11,6 +12,14 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
+        trackingId: "UA-150724772-1",
+      },
+    },
     {
       resolve: "gatsby-source-contentful",
       options: {

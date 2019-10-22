@@ -8,7 +8,7 @@ import { Reboot } from "../utils/base/reboot" // Reboot Globals styles
 import { Colors } from "../utils/theme/colors" // (colors)
 import { Typography } from "../utils/theme/typography" // (fonts)
 import { VariableStyle } from "../utils/config/variableStyle" // (Variables Styles)
-import { TimelineMax, Expo } from "gsap"
+import { TimelineMax, Power4 } from "gsap"
 // Layout
 import { Main, Nav } from "./styled"
 // MODULES (SMACSS) or COMPONENTS (ITCSS)
@@ -19,17 +19,17 @@ import { IconLogo } from "../utils/theme/icons"
 
 class Layout extends Component {
   componentDidMount() {
-    return new TimelineMax()
+    new TimelineMax()
       .to("#container", 1, {
         x: 0,
-        ease: Expo.easeOut,
+        ease: Power4.easeOut,
       })
       .to(
         "#container",
         1,
         {
           opacity: 1,
-          ease: Expo.easeOut,
+          ease: Power4.easeOut,
         },
         "-= 0.65"
       )

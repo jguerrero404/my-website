@@ -42,7 +42,7 @@ function Footer() {
         </p>
       </FooterCreated>
       <FooterIcons>
-         <a
+        <a
           href={site.siteMetadata.social.twitter}
           target="__blanck"
           className="icon-twiter"
@@ -51,7 +51,7 @@ function Footer() {
             <IconTwiter />
           </i>
         </a>
-       <a
+        <a
           href={site.siteMetadata.social.github}
           target="__blanck"
           className="icon-github"
@@ -69,9 +69,7 @@ function Footer() {
             <IconLinkedin />
           </i>
         </a>
-        <a href="https://icon.com"
-            target="__blanck"
-            className="icon-youtube">
+        <a href="https://icon.com" target="__blanck" className="icon-youtube">
           <i>
             <IconYoutube />
           </i>
