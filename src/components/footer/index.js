@@ -47,6 +47,7 @@ function Footer() {
           href={site.siteMetadata.social.twitter}
           target="__blanck"
           className="icon-twiter"
+          aria-label="twiter"
         >
           <i>
             <IconTwiter />
@@ -56,6 +57,7 @@ function Footer() {
           href={site.siteMetadata.social.github}
           target="__blanck"
           className="icon-github"
+          aria-label="github"
         >
           <i>
             <IconGithub />
@@ -65,6 +67,7 @@ function Footer() {
           href={site.siteMetadata.social.linkedin}
           target="__blanck"
           className="icon-linkedin"
+          aria-label="likedin"
         >
           <i>
             <IconLinkedin />
@@ -74,6 +77,7 @@ function Footer() {
           href="https://icon.com"
           target="__blanck"
           className="icon-youtube"
+          aria-label="youtube"
         >
           <i>
             <IconYoutube />

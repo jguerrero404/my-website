@@ -147,7 +147,6 @@ export const IconTwiter = () => (
 export const IconGithub = () => (
   <svg
     version="1.1"
-    id="Capa_1"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 438.536 438.536"
   >
@@ -276,7 +275,6 @@ export const IconReadBook = () => (
 export const IconPencil = () => (
   <svg
     version="1.1"
-    id="Capa_1"
     xmlns="http://www.w3.org/2000/svg"
     x="0px"
     y="0px"
@@ -329,7 +327,6 @@ export const IconBarGraph = () => (
 export const IconQuestion = () => (
   <svg
     version="1.1"
-    id="Capa_1"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 365.442 365.442"
   >
@@ -356,7 +353,6 @@ export const IconQuestion = () => (
 export const IconWarning = () => (
   <svg
     version="1.1"
-    id="Capa_1"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 512.209 512.209"
   >
@@ -378,7 +374,6 @@ export const IconWarning = () => (
 export const IconCorrect = () => (
   <svg
     version="1.1"
-    id="Capa_1"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 442.533 442.533"
   >
@@ -395,7 +390,6 @@ export const IconCorrect = () => (
 export const IconExternal = () => (
   <svg
     version="1.1"
-    id="Capa_1"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 438.536 438.536"
   >

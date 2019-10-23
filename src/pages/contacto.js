@@ -171,7 +171,7 @@ export default class ContactPage extends Component {
                 value={this.state.message}
               ></textarea>
             </div>
-            <Btn width="100%" background="var(--primary-color)" color="#fff">
+            <Btn width="100%" background="var(--green-dark)" color="#fff">
               Enviar
             </Btn>
           </form>

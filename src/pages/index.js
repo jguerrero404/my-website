@@ -23,7 +23,7 @@ const IndexPage = () => (
         </h1>
         <Buttons>
           <Link to="/portafolio">
-            <Btn background="var(--primary-color)" color="#fff">
+            <Btn background="var(--green-dark)" color="#fff">
               Explora
             </Btn>
           </Link>

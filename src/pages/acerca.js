@@ -1,6 +1,7 @@
 // Constructor
 import React from "react"
 import styled from "styled-components"
+import { useStaticQuery, graphql } from "gatsby"
 // Base
 import SEO from "../components/seo"
 import Layout from "../layout/index"
@@ -54,43 +55,61 @@ const Info = styled.section`
   align-items: center;
 `
 
-const AboutPage = () => (
-  <Layout title="Acerca de mi">
-    <SEO title="Acerca de" />
-    <Me>
-      <User firtsName="José" secondName="Guerrero" pro="Desarrollador Web" />
-      <p>
-        Soy un desarrollador web full stack. Disfruto y encuentro facinante
-        resolver problemas implementando características y nuevas tecnologías
-        tanto en el frontend como en el backend.
-      </p>
-      <a href="https://drive.google.com/uc?id=1W1FLkUWqdjLEkyO0baEtLXzXJmPUJEIS&export=download">
-        <Btn background="var(--primary-color)" color="#fff">
-          Resumen
-        </Btn>
-      </a>
-    </Me>
-    <Info>
-      <Cell title="Codeardor">
-        <IconSkill />
-      </Cell>
-      <Cell title="Amante de la lectura">
-        <IconReadBook />
-      </Cell>
-      <Cell title="Jugador de ajedrez">
-        <IconChess />
-      </Cell>
-      <Cell title="Autodidacta">
-        <IconBook />
-      </Cell>
-      <Cell title="Aprendiz en Traeding ">
-        <IconBarGraph />
-      </Cell>
-      <Cell title="Creador de Contenidos">
-        <IconPencil />
-      </Cell>
-    </Info>
-  </Layout>
-)
+function AboutPage() {
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            cv
+          }
+        }
+      }
+    `
+  )
+
+  return (
+    <Layout title="Acerca de mi">
+      <SEO title="Acerca de" />
+      <Me>
+        <User
+          firtsName="José"
+          secondName="Guerrero"
+          pro="Desarrollador web y escritor técnico independiente"
+        />
+        <p>
+          Soy un desarrollador web full stack. Disfruto y encuentro facinante
+          resolver problemas implementando características y nuevas tecnologías
+          tanto en el frontend como en el backend.
+        </p>
+        <a href={site.siteMetadata.cv}>
+          <Btn background="var(--green-dark)" color="#fff">
+            Resumen
+          </Btn>
+        </a>
+      </Me>
+      <Info>
+        <Cell title="Codeardor">
+          <IconSkill />
+        </Cell>
+        <Cell title="Amante de la lectura">
+          <IconReadBook />
+        </Cell>
+        <Cell title="Jugador de ajedrez">
+          <IconChess />
+        </Cell>
+        <Cell title="Autodidacta">
+          <IconBook />
+        </Cell>
+        <Cell title="Aprendiz en Traeding ">
+          <IconBarGraph />
+        </Cell>
+        <Cell title="Creador de Contenidos">
+          <IconPencil />
+        </Cell>
+      </Info>
+    </Layout>
+  )
+}
 
 export default AboutPage

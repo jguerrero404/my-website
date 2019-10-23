@@ -68,7 +68,7 @@ export const Tag = styled.span`
   margin: 0.25em;
   font-size: ${({ size }) => (size ? "18px" : "10.5px")};
   line-height: ${({ size }) => (size ? "22px" : "13px")};
-  font-weight: ${({ size }) => (size ? "600" : "400")};
+  font-weight: ${({ size }) => (size ? "700" : "600")};
   @media (min-width: 768px) {
     font-size: ${({ size }) => (size ? "1.2em" : "0.7em")};
     line-height: ${({ size }) => (size ? "29px" : "17px")};

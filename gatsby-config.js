@@ -4,6 +4,8 @@ module.exports = {
     title: `José Guerrero`,
     description: `Este es mi sitio web personal`,
     author: `José Guerrero`,
+    cv:
+      "https://www.dropbox.com/s/u3j3ba48ehmbv9h/Jos%C3%A9%20Guerrero%20%28CV%29.pdf?dl=1",
     social: {
       twitter: "https://twitter.com/jguerrero404",
       github: "https://github.com/jguerrero404",
@@ -13,6 +15,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-sitemap`,
+    'gatsby-plugin-robots-txt',
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

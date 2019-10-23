@@ -78,14 +78,14 @@ class Proyect extends React.Component {
                 <Details>
                   <Buttons>
                     <a href={data.contentfulProyects.repo} target="__blanck">
-                      <Btn color="#000" background="var(--gray-2)">
+                      <Btn color="var(--sidenav-bg)" background="var(--gray-2)">
                         <IconGithub />
                         Repositorio
                       </Btn>
                     </a>
                     <a href={data.contentfulProyects.demo} target="__blanck">
-                      <Btn color="#000" background="var(--yellow)">
-                        Demo <IconExternal />
+                      <Btn color="#000" background="var(--orange)">
+                        <IconExternal /> Demo
                       </Btn>
                     </a>
                   </Buttons>

@@ -23,7 +23,7 @@ const UserProfile = ({ firtsName, secondName, pro }) => {
         <Img fluid={data.placeholderImage.childImageSharp.fluid} />
       </UserImage>
       <UserName>
-        <span>{firtsName}</span> {secondName}
+        {firtsName} {secondName}
       </UserName>
       <UserPro>{pro}</UserPro>
     </>
