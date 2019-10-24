@@ -20,6 +20,7 @@ export const CardWrapper = styled.article`
 `
 
 export const CardContainer = styled.div`
+  width: 100%;
   min-height: 240px;
   background-color: var(--card-bg);
   color: var(--text-color);
@@ -37,12 +38,14 @@ export const CardContainer = styled.div`
 `
 
 export const CardContent = styled.div`
+  width: 100%;
   padding: 0 var(--gutter);
   display: flex;
   flex-direction: column;
 `
 
 export const CardFooter = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -50,6 +53,7 @@ export const CardFooter = styled.div`
 `
 
 export const CardTitle = styled.h3`
+  width: 100%;
   font-weight: 800;
   font-style: normal;
   font-family: "ratio", sans-serif;
@@ -64,6 +68,7 @@ export const CardTitle = styled.h3`
 `
 
 export const CardText = styled.p`
+  width: 100%;
   line-height: 24px;
   margin-bottom: var(--gutter);
   font-family: sans-serif;
@@ -76,4 +81,5 @@ export const CardText = styled.p`
 `
 export const CardTag = styled(Tag)`
   background-color: red;
+  width: 100%;
 `
