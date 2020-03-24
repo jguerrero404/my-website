@@ -78,7 +78,7 @@ function AboutPage() {
           pro="Desarrollador web y escritor técnico independiente"
         />
         <p>
-          Soy un desarrollador web full stack. Disfruto y encuentro facinante
+          Soy un desarrollador web full stack. Disfruto y encuentro fascinante
           resolver problemas implementando características y nuevas tecnologías
           tanto en el frontend como en el backend.
         </p>
