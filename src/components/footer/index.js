@@ -32,8 +32,8 @@ function Footer() {
   return (
     <FooterContainer className="footer">
       <p>
-        Tienes algun proyecto en mente?. <Link to="/contacto">Contactame</Link>{" "}
-        y creemoslo juntos
+        Tienes algún proyecto en mente?.<Link to="/contacto">Contacta me</Link>{" "}
+        y creémoslo juntos.
       </p>
       <FooterCreated>
         <p> Copyright © {new Date().getFullYear()}</p>
