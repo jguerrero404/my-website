@@ -89,10 +89,10 @@ function AboutPage() {
         </a>
       </Me>
       <Info>
-        <Cell title="Codeardor">
+        <Cell title="Encoder">
           <IconSkill />
         </Cell>
-        <Cell title="Amante de la lectura">
+        <Cell title="Lector">
           <IconReadBook />
         </Cell>
         <Cell title="Jugador de ajedrez">
