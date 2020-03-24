@@ -32,7 +32,7 @@ function Footer() {
   return (
     <FooterContainer className="footer">
       <p>
-        Tienes algún proyecto en mente?.<Link to="/contacto">Contacta me</Link>{" "}
+        Tienes algún proyecto en mente?.<Link to="/contacto"> Contacta me</Link>{" "}
         y creémoslo juntos.
       </p>
       <FooterCreated>
